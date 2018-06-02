@@ -108,7 +108,7 @@ def get_courses_urls_from_list(coursera_feed_url):
 
 
 if __name__ == '__main__':
-    courses_qty_to_select = 1
+    courses_qty_to_select = 20
     file_output_path = 'courses-info.xlsx'
     coursera_feed_url = 'https://www.coursera.org/sitemap~www~courses.xml'
 
