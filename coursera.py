@@ -70,8 +70,6 @@ def get_courses_info(courses_urls):
         course_info = get_course_info(course_html)
         course_info['url'] = course_url
 
-        print(course_info)
-
         courses_info.append(
             course_info
         )
@@ -83,7 +81,7 @@ def get_courses_list_from_feed(coursera_feed_url, qty):
     feed_xml = get_content_as_text_from_url(coursera_feed_url)
     feed_soup = BeautifulSoup(feed_xml, 'lxml')
     urls = feed_soup.findAll('loc')
-    urls = [course.text for course in urls]
+    urls = [course.get_text() for course in urls]
     return random.sample(urls, qty)
 
 
